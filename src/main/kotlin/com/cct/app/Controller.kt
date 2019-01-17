@@ -14,9 +14,6 @@ class Controller {
     @Autowired
     lateinit var teamDao: TeamDao
 
-    @Value("\${max.team.size}")
-    private val maxTeamSize: Int? = null
-
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/{teamName}")
     fun createTeam(@PathVariable teamName: String): Team {
@@ -39,18 +36,10 @@ class Controller {
         return teamDao.getNextQuestion()
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.OK)
     @PostMapping("/{teamName}" + "/{questionID}" + "/{answer}")
     fun sendAnswer(@PathVariable teamName: String, @PathVariable questionID: Int, @PathVariable answer: Int ) {
         teamDao.handleAnswer(teamName, questionID, answer)
     }
-
-//    @ResponseStatus(HttpStatus.CREATED)
-//    @PostMapping("/{teamName}" + "/{questionID}" + "/answer")
-//    fun sendAnswer(@PathVariable teamName: String
-//                   @PathVariable questionID: ) {
-//        teamDao.createTeam(teamName)
-//    }
-
 
 }
