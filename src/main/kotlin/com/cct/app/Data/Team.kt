@@ -5,6 +5,6 @@ import org.springframework.data.annotation.Id
 data class Team(
         @Id
         var teamName: String,
-        var answeredQuestionIds: ArrayList<Int>,
+        var answeredQuestionIds: List<Int>,
         var score: Int
 )

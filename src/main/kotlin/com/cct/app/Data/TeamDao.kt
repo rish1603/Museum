@@ -13,18 +13,12 @@ class TeamDao {
     lateinit var repository: TeamRepository
 
     fun createTeam(teamName: String): Team {
-        return repository.save(Team(teamName, arrayListOf(), 0))
+        var randomisedQuestions = ((0..10).shuffled())
+        return repository.save(Team(teamName, randomisedQuestions, 0))
     }
 
     fun getTeams(): List<Team> {
         return repository.findAll()
-    }
-
-    fun getNextQuestion(): Question {
-
-        val testModel = getQuestionsJson()
-        println(testModel!![0])
-        return testModel!![0]
     }
 
     fun handleAnswer(teamName: String, questionID: Int, answer: Int) {
@@ -34,7 +28,6 @@ class TeamDao {
         if(questions!![questionID].rightAnswer == answer) {
             team.score++
         }
-        team.answeredQuestionIds.add(questionID)
 
         repository.save(team)
     }
@@ -45,4 +38,5 @@ class TeamDao {
         val gson = Gson()
         return gson.fromJson(bufferedReader, Array<Question>::class.java)
     }
+
 }
