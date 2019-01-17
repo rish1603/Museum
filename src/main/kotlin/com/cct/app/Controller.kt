@@ -34,7 +34,7 @@ class Controller {
     }
 
     @CrossOrigin
-    @GetMapping("/{questionID")
+    @GetMapping("/question" + "/{questionID")
     fun getQuestion(@PathVariable questionID: Int): Question{
         return teamDao.getQuestionsJson()!![questionID]
     }
