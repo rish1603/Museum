@@ -1,6 +1,6 @@
 [
   {
-    "question": "asfasf",
+    "question": "WHat is your name",
     "choices": [
       "One",
       "Two",
@@ -10,7 +10,37 @@
     "rightAnswer": 2
   },
   {
-    "question": "question 2 haah",
+    "question": "Who is indiana jones?",
+    "choices": [
+      "One",
+      "ur mom",
+      "Three",
+      "Four"
+    ],
+    "rightAnswer": 2
+  },
+  {
+    "question": "question haha?",
+    "choices": [
+      ":))",
+      "Two",
+      "Three",
+      "Four"
+    ],
+    "rightAnswer": 0
+  },
+  {
+    "question": "how am i gonna think of questions?",
+    "choices": [
+      ":))",
+      "Two",
+      "Three",
+      "Four"
+    ],
+    "rightAnswer": 0
+  },
+  {
+    "question": "idk",
     "choices": [
       "One",
       "Two",
@@ -18,9 +48,49 @@
       "Four"
     ],
     "rightAnswer": 2
+  },
+  {
+    "question": "HCI?",
+    "choices": [
+      "One",
+      "Two",
+      "Three",
+      "Four"
+    ],
+    "rightAnswer": 2
+  },
+  {
+    "question": "archaelogy ROCKS",
+    "choices": [
+      ":))",
+      "Two",
+      "Three",
+      "Four"
+    ],
+    "rightAnswer": 0
   },
   {
     "question": "question haha",
+    "choices": [
+      ":))",
+      "Two",
+      "Three",
+      "Four"
+    ],
+    "rightAnswer": 0
+  },
+  {
+    "question": "almost done",
+    "choices": [
+      ":))",
+      "Two",
+      "Three",
+      "Four"
+    ],
+    "rightAnswer": 0
+  },
+  {
+    "question": "last one!",
     "choices": [
       ":))",
       "Two",
