@@ -1,0 +1,32 @@
+[
+  {
+    "question": "asfasf",
+    "choices": [
+      "One",
+      "Two",
+      "Three",
+      "Four"
+    ],
+    "rightAnswer": 2
+  },
+  {
+    "question": "question 2 haah",
+    "choices": [
+      "One",
+      "Two",
+      "Three",
+      "Four"
+    ],
+    "rightAnswer": 2
+  },
+  {
+    "question": "question haha",
+    "choices": [
+      ":))",
+      "Two",
+      "Three",
+      "Four"
+    ],
+    "rightAnswer": 0
+  }
+]
