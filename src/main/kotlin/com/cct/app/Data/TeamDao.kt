@@ -13,7 +13,7 @@ class TeamDao {
     lateinit var repository: TeamRepository
 
     fun createTeam(teamName: String): Team {
-        var randomisedQuestions = ((0..10).shuffled())
+        var randomisedQuestions = ((0..9).shuffled())
         return repository.save(Team(teamName, randomisedQuestions, 0))
     }
 
