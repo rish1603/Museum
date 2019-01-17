@@ -35,8 +35,7 @@ class TeamDao {
     fun getQuestionsJson(): Array<Question>? {
         val path = "src/main/kotlin/com/cct/app/Data/Questions.json"
         val bufferedReader = BufferedReader(FileReader(path))
-        val gson = Gson()
-        return gson.fromJson(bufferedReader, Array<Question>::class.java)
+        return Gson().fromJson(bufferedReader, Array<Question>::class.java)
     }
 
 }
