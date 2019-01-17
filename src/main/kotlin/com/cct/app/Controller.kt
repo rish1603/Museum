@@ -13,17 +13,20 @@ class Controller {
     @Autowired
     lateinit var teamDao: TeamDao
 
+    @CrossOrigin
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/{teamName}")
     fun createTeam(@PathVariable teamName: String): Team {
         return teamDao.createTeam(teamName)
     }
 
+    @CrossOrigin
     @GetMapping("/teams", produces = ["application/json"])
     fun getTeams(): List<Team> {
         return teamDao.getTeams()
     }
 
+    @CrossOrigin
     @ResponseStatus(HttpStatus.OK)
     @PostMapping("/{teamName}" + "/{questionID}" + "/{answer}")
     fun sendAnswer(@PathVariable teamName: String, @PathVariable questionID: Int, @PathVariable answer: Int ) {
