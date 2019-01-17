@@ -19,8 +19,8 @@ class Controller {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/{teamName}")
-    fun createTeam(@PathVariable teamName: String) {
-        teamDao.createTeam(teamName)
+    fun createTeam(@PathVariable teamName: String): Team {
+        return teamDao.createTeam(teamName)
     }
 
     @GetMapping("/teams", produces = ["application/json"])
@@ -36,6 +36,13 @@ class Controller {
 //    @GetMapping("/getQuestions", produces = ["application/json"])
 //    fun getQuestions(): Question {
 //        return teamDao.getNextQuestion()
+//    }
+
+//    @ResponseStatus(HttpStatus.CREATED)
+//    @PostMapping("/{teamName}" + "/{questionID}" + "/answer")
+//    fun sendAnswer(@PathVariable teamName: String
+//                   @PathVariable questionID: ) {
+//        teamDao.createTeam(teamName)
 //    }
 
 

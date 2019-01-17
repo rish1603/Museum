@@ -2,7 +2,6 @@ package com.cct.app.Data
 
 import com.google.gson.Gson
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.data.mongodb.core.aggregation.VariableOperators
 import org.springframework.stereotype.Component
 import java.io.BufferedReader
 import java.io.FileReader
@@ -13,8 +12,8 @@ class TeamDao {
     @Autowired
     lateinit var repository: TeamRepository
 
-    fun createTeam(teamName: String) {
-        repository.save(Team(teamName, arrayListOf(), 0))
+    fun createTeam(teamName: String): Team {
+        return repository.save(Team(teamName, arrayListOf(), 0))
     }
 
     fun getTeams(): List<Team> {
