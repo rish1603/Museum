@@ -21,13 +21,28 @@ class TeamDao {
     }
 
     fun getNextQuestion(): Question {
+
+        val testModel = getQuestionsJson()
+        println(testModel!![0])
+        return testModel!![0]
+    }
+
+    fun handleAnswer(teamName: String, questionID: Int, answer: Int) {
+        val team: Team = repository.findByTeamName(teamName)
+        val questions = getQuestionsJson()
+
+        if(questions!![questionID].rightAnswer == answer) {
+            team.score++
+        }
+        team.answeredQuestionIds.add(questionID)
+
+        repository.save(team)
+    }
+
+    fun getQuestionsJson(): Array<Question>? {
         val path = "src/main/kotlin/com/cct/app/Data/Questions.json"
         val bufferedReader = BufferedReader(FileReader(path))
         val gson = Gson()
-
-        val testModel = gson.fromJson(bufferedReader, Array<Question>::class.java)
-        println(testModel[0])
-        return testModel[0]
+        return gson.fromJson(bufferedReader, Array<Question>::class.java)
     }
-
 }

@@ -33,17 +33,16 @@ class Controller {
 //        return
 //    }
 
-//    @GetMapping("/getQuestions", produces = ["application/json"])
-//    fun getQuestions(): Question {
-//        return teamDao.getNextQuestion()
-//    }
+    @GetMapping("/getNextQuestion", produces = ["application/json"])
+    fun getQuestions(): Question {
+        return teamDao.getNextQuestion()
+    }
 
-//    @ResponseStatus(HttpStatus.CREATED)
-//    @PostMapping("/{teamName}" + "/{questionID}" + "/answer")
-//    fun sendAnswer(@PathVariable teamName: String
-//                   @PathVariable questionID: ) {
-//        teamDao.createTeam(teamName)
-//    }
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping("/{teamName}" + "/{questionID}" + "/{answer}")
+    fun sendAnswer(@PathVariable teamName: String, @PathVariable questionID: Int, @PathVariable answer: Int ) {
+        teamDao.handleAnswer(teamName, questionID, answer)
+    }
 
 
 }

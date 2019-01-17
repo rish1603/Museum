@@ -5,4 +5,6 @@ import org.springframework.stereotype.Component
 
 
 @Component
-interface TeamRepository : MongoRepository<Team, String>
+interface TeamRepository : MongoRepository<Team, String> {
+    fun findByTeamName(teamName: String): Team
+}
