@@ -33,10 +33,11 @@ class Controller {
 //        return
 //    }
 
-//    @GetMapping("/getQuestions", produces = ["application/json"])
-//    fun getQuestions(): Question {
-//        return teamDao.getNextQuestion()
-//    }
+    @CrossOrigin
+    @GetMapping("/getQuestions", produces = ["application/json"])
+    fun getQuestions(): Question {
+        return teamDao.getNextQuestion()
+    }
 
 //    @ResponseStatus(HttpStatus.CREATED)
 //    @PostMapping("/{teamName}" + "/{questionID}" + "/answer")
