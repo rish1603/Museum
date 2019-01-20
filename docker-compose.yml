@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  inidiana:
+    image: inidiana
+    build: indiana/.
+    environment:
+      NODE_ENV: production
+    # ports:
+    #   - 8080:8080
+    network_mode: 'host'
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    network_mode: 'host'
+  backend:
+    build: Museum/.
+    # ports: 
+    #   - 8090:8090
+    network_mode: 'host'
