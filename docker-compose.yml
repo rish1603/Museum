@@ -16,7 +16,7 @@ services:
       - "27017:27017"
     network_mode: 'host'
   backend:
-    build: Museum/.
+    build: .
     # ports: 
     #   - 8090:8090
     network_mode: 'host'
