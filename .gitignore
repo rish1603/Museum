@@ -24,3 +24,4 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+indiana/node_modules/
