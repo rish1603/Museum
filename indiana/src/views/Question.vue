@@ -40,6 +40,7 @@ export default {
       const resp = await fetch(`${apiUrl}/${this.$store.getters.team.name}/${this.$route.params.id}/${choice}`, {method: "POST"})
       console.log('next')
       this.$store.commit('nextQuestion')
+      clearInterval(this.timer)
       if(this.$store.getters.nextQuestion == undefined){
         this.$router.push('/leaderboard/')
       } else {

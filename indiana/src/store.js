@@ -23,5 +23,4 @@ export default new Vuex.Store({
     team: (state) => state.team,
     nextQuestion: (state) => state.team.answeredQuestionIds[state.team.currentQuestion]
   },
-  plugins: [createPersistedState()]
 })
