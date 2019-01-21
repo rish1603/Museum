@@ -1,2 +1,2 @@
 export const timePerQuestion = 60
-export const apiUrl = 'http://localhost:8090'
+export const apiUrl = 'http://0.0.0.0:8090'
